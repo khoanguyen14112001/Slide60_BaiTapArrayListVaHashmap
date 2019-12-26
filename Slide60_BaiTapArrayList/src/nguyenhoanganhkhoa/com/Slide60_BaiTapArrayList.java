@@ -113,9 +113,13 @@ public class Slide60_BaiTapArrayList {
 			{
 				System.out.println((i+1)+". "+ dsSinhVien.get(i));
 			}
-			System.out.print("Sinh viên bạn muốn xóa ở vị trí thứ : ");
-			int vtXoa = new Scanner(System.in).nextInt();
-			dsSinhVien.remove(vtXoa-1);
+			System.out.print("Mời bạn nhập tên SV cần xóa : ");
+			String svCanXoa = new Scanner(System.in).nextLine();
+			for(int k=0;k<dsSinhVien.size();k++)
+			{
+				if(dsSinhVien.get(k).contains(svCanXoa))
+					dsSinhVien.remove(k);
+			}
 		}
 		
 	}

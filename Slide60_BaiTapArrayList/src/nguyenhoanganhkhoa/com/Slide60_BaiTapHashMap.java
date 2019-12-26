@@ -128,13 +128,14 @@ public class Slide60_BaiTapHashMap {
 			System.out.println("Bạn chưa nhập tên SV => Mời nhập");
 		else
 		{ 
-			System.out.print("Mời bạn nhập mã của SV muốn xóa : ");
-			int maCanXoa = new Scanner(System.in).nextInt();
-			if(dsSinhVien.containsKey(maCanXoa)==false)
-				System.out.println("Mã SV không tồn tại");
-			else 
+			System.out.print("Mời bạn nhập tên của SV muốn xóa : ");
+			String tenSVCanXoa = new Scanner(System.in).nextLine();
+			for (Map.Entry<Integer, String> svTenCanXoa : dsSinhVien.entrySet())
 			{
-				dsSinhVien.remove(maCanXoa);
+				if(svTenCanXoa.getValue().contains(tenSVCanXoa))
+				{
+					dsSinhVien.remove(svTenCanXoa.getKey());
+				}
 			}
 		}
 	}
